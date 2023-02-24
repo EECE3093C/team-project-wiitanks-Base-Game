@@ -18,9 +18,12 @@ func control(delta):
 		pass
 
 func _ready():
+	var circle_collision = CircleShape2D.new()
+	$DetectionRadius/CollisionShape2D.shape = circle_collision
 	$DetectionRadius/CollisionShape2D.shape.radius = detection_radius
 
 func _process(delta):
+	# Only aim and shoot if there is a target to shoot at
 	if target:
 		# Find the direction to the target
 		var target_direction = (target.global_position - global_position).normalized()
@@ -28,6 +31,11 @@ func _process(delta):
 		var curr_direction = Vector2(1,0).rotated($Turret.global_rotation)
 		# Use linear interpolation to rotate our turret towards the target direction
 		$Turret.global_rotation = curr_direction.linear_interpolate(target_direction, turret_speed * delta).angle()
+		
+		# After turning the turret, find how close we are to pointing at the target
+		# If we are pointing close to the target, fire
+		if target_direction.dot(curr_direction) > 0.9: # If == 1, angle is perfect
+			shoot()
 
 
 # When a player enters the radius of the enemy tank, set it to it's target
