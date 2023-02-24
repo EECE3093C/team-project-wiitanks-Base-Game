@@ -31,5 +31,6 @@ func _on_Lifetime_timeout():
 # When the bullet hits something, call bullet_hit() and then apply damage if needed
 func _on_Bullet_body_entered(body):
 	bullet_hit()
+	# Check if collided body can take_damage()
 	if body.has_method('take_damage'):
 		body.take_damage(damage)
