@@ -8,6 +8,7 @@ func set_camera_limits():
 	# First, get the size of the map and the tile size
 	var map_limits = $Ground.get_used_rect()
 	var map_cellsize = $Ground.cell_size
+	# Calculate camera limits based on map bounds and tile size
 	$PlayerTank/Camera2D.limit_left = map_limits.position.x * map_cellsize.x
 	$PlayerTank/Camera2D.limit_right = map_limits.end.x * map_cellsize.x
 	$PlayerTank/Camera2D.limit_top = map_limits.position.y * map_cellsize.y
