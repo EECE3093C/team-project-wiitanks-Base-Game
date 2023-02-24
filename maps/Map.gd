@@ -14,8 +14,8 @@ func set_camera_limits():
 	$PlayerTank/Camera2D.limit_top = map_limits.position.y * map_cellsize.y
 	$PlayerTank/Camera2D.limit_bottom = map_limits.end.y * map_cellsize.y
 
-# To ensure bullets are not children of the tanks that shoot them, handle them here
-func _on_PlayerTank_shoot(bullet, _position, _direction):
+# All tank shooting will be managed here
+func _on_Tank_shoot(bullet, _position, _direction):
 	# Create new instance of the bullet prefab
 	var b = bullet.instance()
 	# Attach the bullet to the scene

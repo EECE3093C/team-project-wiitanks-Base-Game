@@ -38,4 +38,5 @@ speed = 100
 turret_speed = 2.0
 detection_radius = 400
 
-[connection signal="shoot" from="PlayerTank" to="." method="_on_PlayerTank_shoot"]
+[connection signal="shoot" from="PlayerTank" to="." method="_on_Tank_shoot"]
+[connection signal="shoot" from="Paths/Path2D/PathFollow2D/EnemyTank" to="." method="_on_Tank_shoot"]
