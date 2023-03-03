@@ -18,10 +18,12 @@ func control(delta):
 		pass
 
 func _ready():
+	super._ready() # Call the base class _ready() function
+	# Create a new collision shape with custom radius for enemy tanks
 	var circle_collision = CircleShape2D.new()
 	$DetectionRadius/CollisionShape2D.shape = circle_collision
 	$DetectionRadius/CollisionShape2D.shape.radius = detection_radius
-	tank_health = max_health
+	
 
 func _process(delta):
 	# Only aim and shoot if there is a target to shoot at
