@@ -24,3 +24,8 @@ func _on_Tank_shoot(bullet, _position, _direction):
 	add_child(b)
 	# Call the bullet's start function
 	b.start(_position, _direction)
+
+
+func _on_PlayerTank_dead():
+	# If the player dies, reload the scene
+	get_tree().reload_current_scene()

@@ -49,6 +49,7 @@ func take_damage(amount):
 		explode()
 		
 func explode():
+	emit_signal('dead')
 	queue_free()
 	
 # If we are alive still, apply our controls and movement

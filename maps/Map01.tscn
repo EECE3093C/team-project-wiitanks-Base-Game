@@ -43,6 +43,7 @@ detection_radius = 400
 
 [node name="HUD" parent="." instance=ExtResource( 5 )]
 
+[connection signal="dead" from="PlayerTank" to="." method="_on_PlayerTank_dead"]
 [connection signal="health_changed" from="PlayerTank" to="HUD" method="update_health"]
 [connection signal="shoot" from="PlayerTank" to="." method="_on_Tank_shoot"]
 [connection signal="shoot" from="Paths/Path2D/PathFollow2D/EnemyTank" to="." method="_on_Tank_shoot"]
