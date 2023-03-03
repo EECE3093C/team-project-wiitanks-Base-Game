@@ -3,7 +3,8 @@ extends Node2D
 # At the beginning of loading a level, set the camera so it doesnt scroll past the edges of the map
 func _ready():
 	set_camera_limits()
-	Input.set_custom_mouse_cursor(load())
+	# Set our crosshair.png file to the mouse cursor
+	Input.set_custom_mouse_cursor(load("res://assets/UI Elements/crossair_black.png"), Input.CURSOR_ARROW, Vector2(16,16))
 	
 func set_camera_limits():
 	# First, get the size of the map and the tile size
