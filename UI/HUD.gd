@@ -20,10 +20,11 @@ func update_health(new_value):
 	$Margins/Container/HealthBar.texture_progress = bar_texture
 	
 	# Configure the smooth Tween feature to smoothly deplete the health bar to match new_value
-	$Margins/Container/HealthBar/Tween.interpolate_property($Margins/Container/HealthBar,
-	'value', $Margins/Container/HealthBa.value, new_value, 0.2, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+	#$Margins/Container/HealthBar/Tween.interpolate_property($Margins/Container/HealthBar, 'value', $Margins/Container/HealthBa.value, new_value, 0.2, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 	
 	# Start the animation
-	$Margins/Container/HealthBar/Tween.start()
+	#$Margins/Container/HealthBar/Tween.start()
 
 	
+	# Adjust healthbar to match current health
+	$Margins/Container/HealthBar.value = new_value

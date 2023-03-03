@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://tanks/Tank.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/allSprites_default_rotated.png" type="Texture" id=2]
 [ext_resource path="res://tanks/EnemyTank.gd" type="Script" id=3]
 [ext_resource path="res://bullets/EnemyBullet.tscn" type="PackedScene" id=4]
+[ext_resource path="res://UI/UnitDisplay.tscn" type="PackedScene" id=5]
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 21.5, 19 )
@@ -43,5 +44,8 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionRadius" index="0"]
 
+[node name="UnitDisplay" parent="." index="5" instance=ExtResource( 5 )]
+
+[connection signal="health_changed" from="." to="UnitDisplay" method="update_healthbar"]
 [connection signal="body_entered" from="DetectionRadius" to="." method="_on_DetectionRadius_body_entered"]
 [connection signal="body_exited" from="DetectionRadius" to="." method="_on_DetectionRadius_body_exited"]
