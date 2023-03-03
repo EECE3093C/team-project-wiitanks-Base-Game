@@ -32,3 +32,5 @@ margin_bottom = 600.0
 value = 5.0
 texture_under = ExtResource( 1 )
 texture_progress = ExtResource( 3 )
+
+[node name="Tween" type="Tween" parent="Margins/Container/HealthBar"]
