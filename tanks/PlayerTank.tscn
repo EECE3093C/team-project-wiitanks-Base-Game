@@ -17,7 +17,6 @@ __meta__ = {
 }
 Bullet = ExtResource( 4 )
 speed = 200
-health = 100
 rotation_speed = 5.0
 gun_cooldown = 0.4
 
