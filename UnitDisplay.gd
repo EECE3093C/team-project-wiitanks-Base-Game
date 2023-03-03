@@ -1,9 +1,9 @@
 extends Node2D
 
 # Track 3 different sprites for the health bar
-var bar_green = preload("res://assets/barHorizontal_green_mid 200.png")
-var bar_yellow = preload("res://assets/barHorizontal_yellow_mid 200.png")
-var bar_red = preload("res://assets/barHorizontal_red_mid 200.png")
+var bar_green = preload("res://assets/UI Elements/barHorizontal_green_mid 200.png")
+var bar_yellow = preload("res://assets/UI Elements/barHorizontal_yellow_mid 200.png")
+var bar_red = preload("res://assets/UI Elements/barHorizontal_red_mid 200.png")
 var bar_texture
 
 func _ready():
