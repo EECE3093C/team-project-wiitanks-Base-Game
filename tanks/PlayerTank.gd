@@ -15,12 +15,12 @@ func control(delta):
 	rotation += rotation_speed * rot_dir * delta
 	
 	# Last, let's deal with player movement
-	velocity = Vector2() 
+	tank_velocity = Vector2() 
 	# Use the velocity Vector to capture information about which way we are moving
 	if Input.is_action_pressed("forward"):
-		velocity = Vector2(speed, 0).rotated(rotation)
+		tank_velocity = Vector2(speed, 0).rotated(rotation)
 	if Input.is_action_pressed("back"):
-		velocity = Vector2(-speed/2, 0).rotated(rotation) # Moving backwards is slower by 0.5
+		tank_velocity = Vector2(-speed/2, 0).rotated(rotation) # Moving backwards is slower by 0.5
 	
 	if Input.is_action_pressed("click"):
 		# Call the base Tank class' shoot() function

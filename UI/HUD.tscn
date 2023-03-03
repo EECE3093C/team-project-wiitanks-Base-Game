@@ -1,36 +1,32 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=5 format=3 uid="uid://dyq47ck73o3i8"]
 
-[ext_resource path="res://assets/UI Elements/glassPanel_200.png" type="Texture" id=1]
-[ext_resource path="res://assets/UI Elements/heart.png" type="Texture" id=2]
-[ext_resource path="res://assets/UI Elements/barHorizontal_green_mid 200.png" type="Texture" id=3]
-[ext_resource path="res://UI/HUD.gd" type="Script" id=4]
+[ext_resource type="Texture2D" uid="uid://cdln4ujy5pid1" path="res://assets/UI Elements/glassPanel_200.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://db5jsgqsq8epu" path="res://assets/UI Elements/heart.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://cr52gismsrl3q" path="res://assets/UI Elements/barHorizontal_green_mid 200.png" id="3"]
+[ext_resource type="Script" path="res://UI/HUD.gd" id="4"]
 
 [node name="HUD" type="CanvasLayer"]
-script = ExtResource( 4 )
+script = ExtResource("4")
 
 [node name="Margins" type="MarginContainer" parent="."]
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 20.0
-margin_top = 20.0
-margin_right = 20.0
-margin_bottom = 20.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 20.0
+offset_bottom = 20.0
 
 [node name="Container" type="HBoxContainer" parent="Margins"]
-margin_right = 1024.0
-margin_bottom = 600.0
+layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="Margins/Container"]
-margin_right = 50.0
-margin_bottom = 600.0
-texture = ExtResource( 2 )
+layout_mode = 2
+texture = ExtResource("2")
+stretch_mode = 2
 
-[node name="HealthBar" type="TextureProgress" parent="Margins/Container"]
-margin_left = 54.0
-margin_right = 254.0
-margin_bottom = 600.0
+[node name="HealthBar" type="TextureProgressBar" parent="Margins/Container"]
+layout_mode = 2
 value = 5.0
-texture_under = ExtResource( 1 )
-texture_progress = ExtResource( 3 )
-
-[node name="Tween" type="Tween" parent="Margins/Container/HealthBar"]
+texture_under = ExtResource("1")
+texture_progress = ExtResource("3")
