@@ -1,9 +1,9 @@
 extends Area2D
 
 # Set up variables configurable from the inspector
-export (int) var speed
-export (int) var damage
-export (float) var lifetime
+@export var speed : int
+@export var damage : int
+@export var lifetime : float
 
 # Create a vector to track the bullets speed & direction
 var velocity = Vector2()

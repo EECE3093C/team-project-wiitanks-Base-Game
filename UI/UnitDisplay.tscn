@@ -1,18 +1,18 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=4 format=3 uid="uid://cufh0gs75rw6r"]
 
-[ext_resource path="res://assets/UI Elements/barHorizontal_green_mid 200.png" type="Texture" id=1]
-[ext_resource path="res://UnitDisplay.gd" type="Script" id=2]
-[ext_resource path="res://assets/UI Elements/glassPanel_200.png" type="Texture" id=3]
+[ext_resource type="Texture2D" uid="uid://cr52gismsrl3q" path="res://assets/UI Elements/barHorizontal_green_mid 200.png" id="1"]
+[ext_resource type="Script" path="res://UnitDisplay.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://cdln4ujy5pid1" path="res://assets/UI Elements/glassPanel_200.png" id="3"]
 
 [node name="UnitDisplay" type="Node2D"]
-scale = Vector2( 0.35, 0.5 )
-script = ExtResource( 2 )
+scale = Vector2(0.35, 0.5)
+script = ExtResource("2")
 
-[node name="HealthBar" type="TextureProgress" parent="."]
-margin_left = -100.0
-margin_top = -102.0
-margin_right = 100.0
-margin_bottom = -62.0
+[node name="HealthBar" type="TextureProgressBar" parent="."]
+offset_left = -100.0
+offset_top = -102.0
+offset_right = 100.0
+offset_bottom = -62.0
 value = 100.0
-texture_under = ExtResource( 3 )
-texture_progress = ExtResource( 1 )
+texture_under = ExtResource("3")
+texture_progress = ExtResource("1")

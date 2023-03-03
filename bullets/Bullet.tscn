@@ -1,20 +1,17 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=2 format=3 uid="uid://try5njgcio5f"]
 
-[ext_resource path="res://bullets/Bullet.gd" type="Script" id=2]
+[ext_resource type="Script" path="res://bullets/Bullet.gd" id="2"]
 
 [node name="Bullet" type="Area2D"]
-position = Vector2( -1, 0 )
+position = Vector2(-1, 0)
 collision_layer = 8
 collision_mask = 7
-script = ExtResource( 2 )
-__meta__ = {
-"_edit_group_": true
-}
+script = ExtResource("2")
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 rotation = 3.14159
 region_enabled = true
-region_rect = Rect2( 544, 353, 16, 12 )
+region_rect = Rect2(544, 353, 16, 12)
 
 [node name="Lifetime" type="Timer" parent="."]
 one_shot = true

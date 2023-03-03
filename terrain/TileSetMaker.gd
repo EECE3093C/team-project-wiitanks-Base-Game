@@ -1,7 +1,7 @@
 extends Node2D
 
 var tile_size = Vector2(64,64)
-onready var texture = $Sprite.texture
+@onready var texture = $Sprite2D.texture
 
 func _ready():
 	var texture_width = texture.get_width() / tile_size.x
