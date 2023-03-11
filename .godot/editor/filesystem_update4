@@ -1,2 +1,4 @@
 res://default_env.tres
 res://maps/Map01.tscn
+res://UI/TitleScreen.tscn
+res://UI/SetUpMatch.tscn

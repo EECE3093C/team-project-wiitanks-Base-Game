@@ -1,0 +1,149 @@
+[gd_scene load_steps=9 format=3 uid="uid://ypdp3r0bq66t"]
+
+[ext_resource type="Script" path="res://UI/SetUpMatch.gd" id="1_s8hr6"]
+[ext_resource type="PackedScene" uid="uid://drltnjkfuerh" path="res://maps/Map01.tscn" id="2_j0xvc"]
+[ext_resource type="FontFile" uid="uid://biu123axyar8g" path="res://assets/good timing bd.otf" id="3_l8rdy"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_2jqnd"]
+font = ExtResource("3_l8rdy")
+font_size = 60
+
+[sub_resource type="Theme" id="Theme_lmdt5"]
+default_font = ExtResource("3_l8rdy")
+default_font_size = 45
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1d34q"]
+bg_color = Color(0, 0, 0, 0.392157)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6muwl"]
+bg_color = Color(0, 0, 0, 0.490196)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gwdwa"]
+bg_color = Color(0, 0, 0, 0.686275)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[node name="SetUpMatch" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_s8hr6")
+dm_scene = ExtResource("2_j0xvc")
+tdm_scene = ExtResource("2_j0xvc")
+ctf_scene = ExtResource("2_j0xvc")
+custom_scene = ExtResource("2_j0xvc")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 150
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 150
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Choose Gamemode"
+label_settings = SubResource("LabelSettings_2jqnd")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 5.76
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="dm_button" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 0
+theme = SubResource("Theme_lmdt5")
+theme_override_styles/normal = SubResource("StyleBoxFlat_1d34q")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6muwl")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_gwdwa")
+text = "Deathmatch"
+
+[node name="tdm_button" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 0
+theme = SubResource("Theme_lmdt5")
+theme_override_styles/normal = SubResource("StyleBoxFlat_1d34q")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6muwl")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_gwdwa")
+text = "Team Deathmatch"
+
+[node name="ctf_button" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 0
+theme = SubResource("Theme_lmdt5")
+theme_override_styles/normal = SubResource("StyleBoxFlat_1d34q")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6muwl")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_gwdwa")
+text = "Capture the Flag"
+
+[node name="custom_button" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 0
+theme = SubResource("Theme_lmdt5")
+theme_override_styles/normal = SubResource("StyleBoxFlat_1d34q")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6muwl")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_gwdwa")
+text = "Custom Mode"
+
+[node name="menu_button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1000.0
+offset_top = 64.0
+offset_right = 1096.0
+offset_bottom = 120.0
+size_flags_vertical = 3
+focus_mode = 0
+theme = SubResource("Theme_lmdt5")
+theme_override_fonts/font = ExtResource("3_l8rdy")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_1d34q")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6muwl")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_gwdwa")
+text = "<"
+
+[connection signal="button_up" from="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer/VBoxContainer/dm_button" to="." method="_on_dm_button_button_up"]
+[connection signal="button_up" from="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer/VBoxContainer/tdm_button" to="." method="_on_tdm_button_button_up"]
+[connection signal="button_up" from="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer/VBoxContainer/ctf_button" to="." method="_on_ctf_button_button_up"]
+[connection signal="button_up" from="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer/VBoxContainer/custom_button" to="." method="_on_custom_button_button_up"]
+[connection signal="button_up" from="menu_button" to="." method="_on_menu_button_button_up"]
