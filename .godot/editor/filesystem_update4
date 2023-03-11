@@ -1,3 +1,4 @@
 res://default_env.tres
 res://maps/Map01.tscn
-res://tanks/EnemyTank.gd
+res://UI/TitleScreen.tscn
+res://UI/SetUpMatch.tscn

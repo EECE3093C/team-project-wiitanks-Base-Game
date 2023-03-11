@@ -11,7 +11,7 @@ func _ready():
 	for node in get_children():
 		node.hide()
 
-func _process(delta):
+func _process(_delta):
 	# Always show unit display above the tank, not rotating with the tank
 	global_rotation = 0
 
